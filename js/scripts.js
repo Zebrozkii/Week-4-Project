@@ -29,6 +29,9 @@ $(document).ready(function(){
     event.preventDefault();
     var inputtedSize=$("#size").val();
     var inputtedTopping=$("#topping").val();
+    $("#size").val("");
+    $("#topping").val("");
     var newPizza=new Pizza(inputtedSize, inputtedTopping);
+    alert(newPizza);
   });
 });
