@@ -1,26 +1,28 @@
-function Pizza(){
+function Pizza(inputtedSize,inputtedTopping){
   this.size=size,
-  this.toppings=toppings;
+  this.toppings=topping;
+  this.pizzaPrice=10;
 };
 
-Pizza.prototype.checkSize=function(inputtedSize,){
+Pizza.prototype.checkSize=function(){
 
-  if( inputtedSize===12){
-pizzaPrice=10;
-  }else if (size=14) {
-pizzaPrice=12;
+  if( this.size===12){
+this.pizzaPrice=10;
+}else if (this.size=14) {
+this.pizzaPrice=12;
   }else{
 pizzaPrice=14;
   }
-  return pizzaPrice;
-}
+  return this.pizzaPrice;
+};
 Pizza.prototype.checkToppings=function(){
-  if(inputtingTopping===1){
-    pizzaPrice+=2;
-  }else if (inputtedTopping>=2) {
-    pizzaPrice+=5;
+  if(this.toppings===1){
+    this.pizzaPrice+=2;
+  }else if (this.toppings>=2) {
+    this.pizzaPrice+=5;
   }
-}
+};
+
 
 $(document).ready(function(){
   $("form#formOne").submit(function(event){
@@ -28,6 +30,5 @@ $(document).ready(function(){
     var inputtedSize=$("#size").val();
     var inputtedTopping=$("#topping").val();
     var newPizza=new Pizza(inputtedSize, inputtedTopping);
-
-  })
-})
+  });
+});
