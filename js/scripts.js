@@ -22,18 +22,27 @@ Pizza.prototype.checkToppings=function(){
     this.pizzaPrice+=5;
   }
 };
+var displayPizza=function(obj){
+  $('#pizzaPrice').val(obj.pizzaPrice);
+  $('#pizzaSize').val(obj.size);
+  $('#pizzaTopping').val(obj.toppings);
+};
+
+
 
 
 $(document).ready(function(){
   $("form#formOne").submit(function(event){
     event.preventDefault();
-    var inputtedSize=$("#size").val();
+    var inputtedSize=parseInt($("#size").val());
     var inputtedTopping=$("#topping").val();
     $("#size").val("");
     $("#topping").val("");
     var newPizza=new Pizza(inputtedSize, inputtedTopping);
     newPizza.checkSize();
     newPizza.checkToppings();
-    console.log(newPizza);
+    displayPizza(newPizza);
+
+
   });
 });
