@@ -2,19 +2,32 @@ function Pizza(){
   this.size=size,
   this.toppings=toppings;
 };
-var pizza=new Pizza();
-Pizza.prototype.checkSize=function(){
-  if(size===12){
-    price=10;
+
+Pizza.prototype.checkSize=function(inputtedSize,){
+
+  if( inputtedSize===12){
+pizzaPrice=10;
   }else if (size=14) {
-    price=12
+pizzaPrice=12;
   }else{
-    price=14
+pizzaPrice=14;
+  }
+  return pizzaPrice;
+}
+Pizza.prototype.checkToppings=function(){
+  if(inputtingTopping===1){
+    pizzaPrice+=2;
+  }else if (inputtedTopping>=2) {
+    pizzaPrice+=5;
   }
 }
 
 $(document).ready(function(){
   $("form#formOne").submit(function(event){
     event.preventDefault();
+    var inputtedSize=$("#size").val();
+    var inputtedTopping=$("#topping").val();
+    var newPizza=new Pizza(inputtedSize, inputtedTopping);
+
   })
-});
+})

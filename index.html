@@ -3,10 +3,12 @@
   <head>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.3.1.js"</script>
-      <script src="js/scripts.js" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
 
     <title>Jimmy's Pizza Shop</title>
+  </head>
+  <body>
     <h2>Jimmy's Pizza Online Order</h2>
     <form id="formOne">
       <select class="form-control" id="size">
@@ -15,16 +17,23 @@
         <option>14 inch</option>
         <option>16 inch</option>
       </select>
-      <input type="checkbox" name="toppingOne" value="Pepperoni">Pepperoni<br>
-      <input type="checkbox" name="toppingTwo" value="Onions">Onions<br>
-      <input type="checkbox" name="toppingThree" value="GreenPeppers">Green Peppers<br>
-      <input type="checkbox" name="toppingFour" value="Tomatoes">Tomatoes<br>
-      <input type="checkbox" name="toppingFive" value="Sasuage">Sasuage<br>
-      <input type="checkbox" name="toppingSix" value="Pineapple">Pineapple<br>
-      <input type="checkbox" name="toppingSeven" value="Bacon">Bacon<br>
+      <select class="form-control" id="topping">
+        <p><strong>What Size Pizza Would you like?</strong></p>
+        <option>Pepperoni</option>
+        <option>Sausage</option>
+        <option>Pineapple</option>
+      </select>
+  <!--    <input type="checkbox"class="topping" name="toppingOne" value="Pepperoni">Pepperoni<br>
+      <input type="checkbox"class="topping" name="toppingThree" value="GreenPeppers">Green Peppers<br>
+      <input type="checkbox"class="topping" name="toppingTwo" value="Onions">Onions<br>
+      <input type="checkbox"class="topping" name="toppingThree" value="GreenPeppers">Green Peppers<br>
+      <input type="checkbox"class="topping" name="toppingFour" value="Tomatoes">Tomatoes<br>
+      <input type="checkbox"class="topping" name="toppingFive" value="Sasuage">Sasuage<br>
+      <input type="checkbox"class="topping" name="toppingSix" value="Pineapple">Pineapple<br>
+   <input type="checkbox"class="topping" name="toppingSeven" value="Bacon">Bacon<br>-->
+      <button type="submit" class="btn btn-danger btn-lg">Submit!</button>
     </form>
-  </head>
-  <body>
+
 
   </body>
 </html>
