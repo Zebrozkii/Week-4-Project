@@ -1,6 +1,6 @@
 function Pizza(inputtedSize,inputtedTopping){
-  this.size=size,
-  this.toppings=topping;
+  this.size=inputtedSize;
+  this.toppings=inputtedTopping;
   this.pizzaPrice=10;
 };
 
@@ -11,7 +11,7 @@ this.pizzaPrice=10;
 }else if (this.size=14) {
 this.pizzaPrice=12;
   }else{
-pizzaPrice=14;
+this.pizzaPrice=14;
   }
   return this.pizzaPrice;
 };
@@ -32,6 +32,8 @@ $(document).ready(function(){
     $("#size").val("");
     $("#topping").val("");
     var newPizza=new Pizza(inputtedSize, inputtedTopping);
-    alert(newPizza);
+    newPizza.checkSize();
+    newPizza.checkToppings();
+    console.log(newPizza);
   });
 });
