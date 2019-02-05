@@ -1,31 +1,19 @@
-function Pizza(inputtedSize,inputtedTopping){
-  this.size=inputtedSize;
-  this.toppings=inputtedTopping;
-  this.pizzaPrice=10;
-};
-
-Pizza.prototype.checkSize=function(){
-
-  if( this.size===12){
-this.pizzaPrice=10;
-}else if (this.size=14) {
-this.pizzaPrice=12;
-  }else{
-this.pizzaPrice=14;
+function Pizza(sizeInput,pizzaToppings,pizzaPrice){
+  this.sizeInput=sizeInput,
+  this.pizzaToppings=pizzaToppings,
+  this.pizzaPrice=pizzaPrice
+}
+Pizza.prototype.sizeCheck=function(){
+  if (this.sizeInput==="small") {
+    this.pizzaPrice+=10;
   }
-  return this.pizzaPrice;
-};
-Pizza.prototype.checkToppings=function(){
-  if(this.toppings===1){
-    this.pizzaPrice+=2;
-  }else if (this.toppings>=2) {
-    this.pizzaPrice+=5;
+  if(this.sizeInput==="medium"){
+    this.pizzaPrice+=12;
   }
-};
-var displayPizza=function(obj){
-  $('#pizzaPrice').val(obj.pizzaPrice);
-  $('#pizzaSize').val(obj.size);
-  $('#pizzaTopping').val(obj.toppings);
+  if (this.sizeInput==="large") {
+    this.pizzaPrice+=14;
+  }
+  alert(this.pizzaPrice);
 };
 
 
@@ -34,15 +22,12 @@ var displayPizza=function(obj){
 $(document).ready(function(){
   $("form#formOne").submit(function(event){
     event.preventDefault();
-    var inputtedSize=parseInt($("#size").val());
-    var inputtedTopping=$("#topping").val();
-    $("#size").val("");
-    $("#topping").val("");
-    var newPizza=new Pizza(inputtedSize, inputtedTopping);
-    newPizza.checkSize();
-    newPizza.checkToppings();
-    displayPizza(newPizza);
+    var sizeInput=$("input[name=size]:checked").val();
+  //  alert(sizeInput);
+    var pizzaToppings=$("input[name=toping]:checked").val();
+  //  alert(pizzaToppings);
+    var pizzaPrice=0;
+    var thePizza=new Pizza(sizeInput,pizzaToppings,pizzaPrice);
 
-
-  });
+});
 });

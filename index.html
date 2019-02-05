@@ -10,31 +10,21 @@
   </head>
   <body>
     <h2>Jimmy's Pizza Online Order</h2>
-    <form id="formOne">
-      <select class="form-control" id="size">
-        <p><strong>What Size Pizza Would you like?</strong></p>
-        <option>12 inch</option>
-        <option>14 inch</option>
-        <option>16 inch</option>
-      </select>
-      <select class="form-control" id="topping">
-        <p><strong>What Size Pizza Would you like?</strong></p>
-        <option>Pepperoni</option>
-        <option>Sausage</option>
-        <option>Pineapple</option>
-      </select>
-  <!--    <input type="checkbox"class="topping" name="toppingOne" value="Pepperoni">Pepperoni<br>
-      <input type="checkbox"class="topping" name="toppingThree" value="GreenPeppers">Green Peppers<br>
-      <input type="checkbox"class="topping" name="toppingTwo" value="Onions">Onions<br>
-      <input type="checkbox"class="topping" name="toppingThree" value="GreenPeppers">Green Peppers<br>
-      <input type="checkbox"class="topping" name="toppingFour" value="Tomatoes">Tomatoes<br>
-      <input type="checkbox"class="topping" name="toppingFive" value="Sasuage">Sasuage<br>
-      <input type="checkbox"class="topping" name="toppingSix" value="Pineapple">Pineapple<br>
-   <input type="checkbox"class="topping" name="toppingSeven" value="Bacon">Bacon<br>-->
+    <div class="container">
+      <form id="formOne">
+         <h2>what size pizza do you want?</h2>
+         <input type="radio" name="size" value="small">12 inch<br>
+         <input type="radio" name="size" value="medium">14 inch<br>
+         <input type="radio" name="size" value="large">16 inch<br>
 
-    </form>
-        <button type="submit" class="btn btn-danger btn-lg">Submit!</button>
-        <p id="pizzaPrice"></p>
-
-  </body>
+         <h2>what toppings would you like?</h2>
+         <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+         <input type="checkbox" name="topping" value="Pineapple">Pineapple<br>
+         <input type="checkbox" name="topping" value="Sasuage">Sasuage<br>
+         <input type="checkbox" name="topping" value="onions">Onions<br>
+         <input type="checkbox" name="topping" value="greenpeppers">Green Peppers<br>
+         <button class="btn btn-info btn-md" type="submit" name="button">Submit!</button>
+       </form>
+     </div>
+      </body>
 </html>
