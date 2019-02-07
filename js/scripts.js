@@ -18,18 +18,20 @@ console.log(this.pizzaPrice);
 
 };
 Pizza.prototype.priceCheck=function(){
-  for (var i = 0; i < this.toppingArr.length; i++) {
     if (this.toppingArr.length===0) {
-      this.pizzaPrice=this.pizzaPrice;
+      this.pizzaPrice=this.pizzaPrice
     }else if (this.toppingArr.length===1) {
       this.pizzaPrice+=2;
     }else {
       this.pizzaPrice+=4;
     }
+  var displayPizza=function(obj){
+    $("pizzaPrice").val(obj.pizzaPrice);
+    $("pizzaToppings").val(obj.toppingArr);
+    $("pizzaSize").val(obj.sizeInput);
   }
-  console.log(this.pizzaPrice);
+    console.log(this.pizzaPrice);
 };
-
   $("form#formOne").submit(function(event){
     event.preventDefault();
     var sizeInput=$("input[name=size]:checked").val();
@@ -43,5 +45,6 @@ Pizza.prototype.priceCheck=function(){
     var thePizza=new Pizza(sizeInput,toppingArr,pizzaPrice);
     thePizza.sizeCheck();
     thePizza.priceCheck();
+    displayPizza=thePizza;
 });
 });
