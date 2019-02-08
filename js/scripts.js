@@ -7,7 +7,7 @@ function Pizza(sizeInput,toppingArr,pizzaPrice){
 Pizza.prototype.sizeCheck=function(){
   if (this.sizeInput==="small") {
     this.pizzaPrice+=10;
-console.log(this.pizzaPrice);
+
   }
   else if(this.sizeInput==="medium"){
     this.pizzaPrice+=12;
@@ -30,7 +30,7 @@ Pizza.prototype.priceCheck=function(){
     $("pizzaToppings").val(obj.toppingArr);
     $("pizzaSize").val(obj.sizeInput);
   }
-    console.log(this.pizzaPrice);
+
 };
   $("form#formOne").submit(function(event){
     event.preventDefault();
@@ -40,11 +40,10 @@ Pizza.prototype.priceCheck=function(){
   $("input[name=topping]:checked").each(function(){
       toppingArr.push($(this).val());
     });
-   alert(toppingArr);
     var pizzaPrice=0;
     var thePizza=new Pizza(sizeInput,toppingArr,pizzaPrice);
     thePizza.sizeCheck();
     thePizza.priceCheck();
-    displayPizza=thePizza;
+    $("#outPut").text("Your total is"+" $"+thePizza.pizzaPrice);
 });
 });
